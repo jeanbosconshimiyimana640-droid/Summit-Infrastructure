@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jeanbosconshimiyimana640-droid.github.io/Summit-Infrastructure/sitemap.xml
