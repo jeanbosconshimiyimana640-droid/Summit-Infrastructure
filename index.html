@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summit Infrastructure Ltd | Civil Engineering, Land Surveying & GIS in Rwanda</title>
+<meta name="description" content="Summit Infrastructure Ltd is a Rwandan engineering and geospatial company offering civil engineering, land surveying, GIS, road design, quantity surveying and project management.">
+<style>
+:root{--navy:#0B2545;--navy2:#13376a;--gold:#C8962E;--cream:#F3EBDD;--text:#22303f;--muted:#5b6672}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",Arial,Helvetica,sans-serif;color:var(--text);line-height:1.65;background:#fff}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:80px 0}
+h1,h2,h3{color:var(--navy);line-height:1.2}
+h2{font-size:2rem;margin-bottom:12px}
+.eyebrow{color:var(--gold);font-weight:700;letter-spacing:.18em;font-size:.8rem;text-transform:uppercase;margin-bottom:10px;display:block}
+.lead{color:var(--muted);max-width:680px;margin-bottom:40px}
+.btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:700;border:2px solid var(--gold);background:var(--gold);color:var(--navy);cursor:pointer;font-size:1rem;transition:.2s}
+.btn:hover{background:#b3841f;border-color:#b3841f}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff}
+.btn.ghost:hover{background:#fff;color:var(--navy)}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;color:#fff}
+.brand b{font-size:1.25rem;letter-spacing:.12em;display:block;line-height:1}
+.brand small{color:var(--gold);font-size:.62rem;letter-spacing:.28em;font-weight:600}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav a{color:#fff;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--gold)}
+nav .btn{padding:9px 18px;font-size:.9rem;color:var(--navy)}
+#menu-toggle,.burger{display:none}
+
+/* HERO */
+.hero{background:linear-gradient(120deg,rgba(11,37,69,.96),rgba(19,55,106,.88)),repeating-linear-gradient(45deg,#0B2545 0 12px,#0e2c52 12px 24px);color:#fff;padding:120px 0 110px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-60px;bottom:-40px;width:520px;height:300px;opacity:.12;background:
+ linear-gradient(135deg,transparent 49%,#fff 50%,#fff 52%,transparent 53%) 0 0/60px 60px}
+.hero h1{color:#fff;font-size:3rem;max-width:720px;margin-bottom:18px}
+.hero h1 span{color:var(--gold)}
+.hero p{font-size:1.15rem;max-width:620px;color:#dbe4f0;margin-bottom:32px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:70px;border-top:1px solid rgba(255,255,255,.2);padding-top:30px}
+.stats b{display:block;font-size:2rem;color:var(--gold)}
+.stats span{font-size:.9rem;color:#dbe4f0}
+
+/* ABOUT */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:center}
+.about p{margin-bottom:14px;color:var(--muted)}
+.vm{display:grid;gap:16px}
+.vm div{background:var(--cream);border-left:5px solid var(--gold);padding:20px 22px;border-radius:4px}
+.vm h3{font-size:1.05rem;margin-bottom:4px}
+.vm p{margin:0;font-size:.95rem}
+
+/* SERVICES */
+.services{background:#f7f8fa}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:#fff;padding:28px 24px;border-radius:6px;border-top:4px solid var(--gold);box-shadow:0 2px 12px rgba(11,37,69,.08);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 24px rgba(11,37,69,.15)}
+.card .num{width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:14px}
+.card h3{font-size:1.08rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.93rem}
+
+/* WHY */
+.why{background:var(--navy);color:#fff}
+.why h2{color:#fff}
+.why .lead{color:#c5d2e4}
+.why .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.why .item{border:1px solid rgba(255,255,255,.18);padding:24px;border-radius:6px}
+.why .item h3{color:var(--gold);font-size:1.05rem;margin-bottom:8px}
+.why .item p{color:#dbe4f0;font-size:.93rem}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:s}
+.step{text-align:center;padding:10px}
+.step::before{counter-increment:s;content:counter(s);display:flex;margin:0 auto 14px;width:54px;height:54px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:800;font-size:1.3rem;align-items:center;justify-content:center}
+.step h3{font-size:1rem;margin-bottom:6px}
+.step p{font-size:.88rem;color:var(--muted)}
+
+/* PROJECTS */
+.projects{background:#f7f8fa}
+.proj{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 12px rgba(11,37,69,.08)}
+.proj .ph{height:170px;background:repeating-linear-gradient(45deg,#dfe6ef 0 14px,#e8edf4 14px 28px);display:flex;align-items:center;justify-content:center;color:#7a8896;font-size:.9rem}
+.proj .body{padding:18px 20px}
+.proj h3{font-size:1.02rem;margin-bottom:4px}
+.proj p{font-size:.88rem;color:var(--muted)}
+
+/* CONTACT */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:50px}
+.info p{margin-bottom:14px}
+.info b{color:var(--navy);display:block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+form{display:grid;gap:14px;background:var(--cream);padding:30px;border-radius:6px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid #cbd3dc;border-radius:4px;font:inherit;background:#fff}
+textarea{min-height:120px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.note{font-size:.8rem;color:var(--muted)}
+
+footer{background:#071a33;color:#aebccf;padding:36px 0;text-align:center;font-size:.9rem}
+footer b{color:var(--gold)}
+.wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:60;font-size:.8rem}
+
+/* MOBILE */
+@media(max-width:900px){
+ .about,.contact{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .stats{grid-template-columns:1fr 1fr}
+ .hero h1{font-size:2.2rem}
+ .burger{display:block;color:#fff;font-size:1.8rem;cursor:pointer}
+ nav ul{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy);flex-direction:column;padding:20px;gap:18px}
+ #menu-toggle:checked ~ nav ul{display:flex}
+ section{padding:56px 0}
+ .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home" aria-label="Summit Infrastructure Ltd home">
+   <svg width="46" height="40" viewBox="0 0 200 190" aria-hidden="true">
+    <polygon points="10,170 80,50 115,110 140,70 190,170" fill="#fff"/>
+    <polygon points="80,50 95,76 80,69 65,76" fill="#C8962E"/>
+    <circle cx="140" cy="70" r="8" fill="none" stroke="#C8962E" stroke-width="3"/>
+    <line x1="140" y1="56" x2="140" y2="84" stroke="#C8962E" stroke-width="2.5"/>
+    <line x1="126" y1="70" x2="154" y2="70" stroke="#C8962E" stroke-width="2.5"/>
+    <rect x="10" y="178" width="180" height="8" fill="#C8962E"/>
+   </svg>
+   <span><b>SUMMIT</b><small>INFRASTRUCTURE LTD</small></span>
+  </a>
+  <input type="checkbox" id="menu-toggle">
+  <label class="burger" for="menu-toggle" aria-label="Menu">&#9776;</label>
+  <nav>
+   <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="btn">Get a Quote</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main id="home">
+<div class="hero">
+ <div class="wrap">
+  <h1>From Survey to <span>Structure.</span></h1>
+  <p>Civil engineering, land surveying and GIS under one roof. Accurate data, sound design and dependable delivery for projects across Rwanda.</p>
+  <div class="actions">
+   <a class="btn" href="#contact">Request a Quote</a>
+   <a class="btn ghost" href="#services">Our Services</a>
+  </div>
+  <div class="stats">
+   <div><b>10</b><span>Core services</span></div>
+   <div><b>1</b><span>Team, survey to build</span></div>
+   <div><b>GNSS</b><span>Precise positioning</span></div>
+   <div><b>100%</b><span>Commitment to quality</span></div>
+  </div>
+ </div>
+</div>
+
+<section id="about">
+ <div class="wrap about">
+  <div>
+   <span class="eyebrow">About Us</span>
+   <h2>One partner for survey, design and construction</h2>
+   <p>Summit Infrastructure Ltd is a Rwandan engineering and geospatial consultancy. We combine civil engineering, land surveying and GIS, so clients deal with one accountable team from the first measurement on site to the finished structure.</p>
+   <p>Our name reflects our standard: reach the highest point of quality on every project through precise data, checked designs and disciplined delivery.</p>
+  </div>
+  <div class="vm">
+   <div><h3>Our Vision</h3><p>To be a trusted leader in infrastructure and geospatial services in Rwanda and the region.</p></div>
+   <div><h3>Our Mission</h3><p>To deliver accurate, safe and cost-effective engineering and survey solutions that support national development.</p></div>
+   <div><h3>Our Values</h3><p>Integrity, precision and quality in everything we measure and build.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="services" class="services">
+ <div class="wrap">
+  <span class="eyebrow">What We Do</span>
+  <h2>Our Services</h2>
+  <p class="lead">Ten core services that cover the full project cycle.</p>
+  <div class="grid">
+   <div class="card"><div class="num">1</div><h3>Civil Engineering &amp; Construction</h3><p>Planning, supervision and delivery of civil works, from site preparation to completion.</p></div>
+   <div class="card"><div class="num">2</div><h3>Land Surveying &amp; Setting Out</h3><p>Accurate boundary, control and construction setting-out using total stations and GNSS.</p></div>
+   <div class="card"><div class="num">3</div><h3>Topographic &amp; Cadastral Surveying</h3><p>Detailed terrain surveys, parcel demarcation and cadastral plans.</p></div>
+   <div class="card"><div class="num">4</div><h3>GIS &amp; Remote Sensing</h3><p>Spatial analysis, satellite and drone image processing, and decision-support maps.</p></div>
+   <div class="card"><div class="num">5</div><h3>Road Design &amp; Infrastructure</h3><p>Geometric design, drainage and layout of roads and supporting infrastructure.</p></div>
+   <div class="card"><div class="num">6</div><h3>Building Design &amp; Construction</h3><p>Architectural and structural design with construction supervision.</p></div>
+   <div class="card"><div class="num">7</div><h3>Quantity Surveying</h3><p>Bills of quantities, cost estimates, valuations and contract cost control.</p></div>
+   <div class="card"><div class="num">8</div><h3>Geotechnical Investigation</h3><p>Site and soil investigation to guide safe, economical foundation design.</p></div>
+   <div class="card"><div class="num">9</div><h3>Mapping &amp; Spatial Data Management</h3><p>Digital maps, geodatabases and well-organised spatial data.</p></div>
+   <div class="card"><div class="num">10</div><h3>Project Management</h3><p>Scheduling, budgeting, quality control and reporting through to hand-over.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="why">
+ <div class="wrap">
+  <span class="eyebrow">Why Summit</span>
+  <h2>Why clients choose us</h2>
+  <p class="lead">Practical reasons to trust us with your project.</p>
+  <div class="grid">
+   <div class="item"><h3>One integrated team</h3><p>Survey, design, construction and spatial data together, with fewer delays and hand-over errors.</p></div>
+   <div class="item"><h3>Modern tools</h3><p>GNSS, total stations and GIS software for accurate, well-documented results.</p></div>
+   <div class="item"><h3>Clear communication</h3><p>Regular progress reports and transparent costing at every stage.</p></div>
+   <div class="item"><h3>Local knowledge</h3><p>Experience with Rwandan terrain, land administration and construction conditions.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="approach">
+ <div class="wrap">
+  <span class="eyebrow">How We Work</span>
+  <h2>Our Approach</h2>
+  <p class="lead">A simple, five-stage process that keeps every project on track.</p>
+  <div class="steps">
+   <div class="step"><h3>Understand</h3><p>Define scope and review the site and existing data.</p></div>
+   <div class="step"><h3>Survey &amp; Investigate</h3><p>Field surveys and geotechnical investigation.</p></div>
+   <div class="step"><h3>Design &amp; Plan</h3><p>Engineering design, quantities and costs.</p></div>
+   <div class="step"><h3>Build &amp; Supervise</h3><p>Setting out, supervision and quality control.</p></div>
+   <div class="step"><h3>Deliver</h3><p>As-built surveys, maps, reports and hand-over.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects" class="projects">
+ <div class="wrap">
+  <span class="eyebrow">Our Work</span>
+  <h2>Featured Projects</h2>
+  <p class="lead">Add your real project photos and details here as you complete them.</p>
+  <div class="grid">
+   <div class="proj"><div class="ph">Project photo</div><div class="body"><h3>[Project name]</h3><p>[Location] &middot; [Service type]</p></div></div>
+   <div class="proj"><div class="ph">Project photo</div><div class="body"><h3>[Project name]</h3><p>[Location] &middot; [Service type]</p></div></div>
+   <div class="proj"><div class="ph">Project photo</div><div class="body"><h3>[Project name]</h3><p>[Location] &middot; [Service type]</p></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap contact">
+  <div class="info">
+   <span class="eyebrow">Contact</span>
+   <h2>Let's talk about your project</h2>
+   <p class="lead" style="margin-bottom:24px">Send us your request and we will reply as soon as possible.</p>
+   <p><b>Phone / WhatsApp</b><span id="phoneShow">+250 791380316</span></p>
+   <p><b>Email</b><span id="emailShow">info@summitinfra.rw</span></p>
+   <p><b>Location</b>Kigali, Rwanda</p>
+  </div>
+  <form id="quoteForm">
+   <div class="row">
+    <input id="name" placeholder="Your name" required>
+    <input id="phone" placeholder="Phone number" required>
+   </div>
+   <select id="service">
+    <option>Land Surveying &amp; Setting Out</option>
+    <option>Topographic &amp; Cadastral Surveying</option>
+    <option>Civil Engineering &amp; Construction</option>
+    <option>GIS &amp; Remote Sensing</option>
+    <option>Road Design &amp; Infrastructure</option>
+    <option>Building Design &amp; Construction</option>
+    <option>Quantity Surveying</option>
+    <option>Geotechnical Investigation</option>
+    <option>Mapping &amp; Spatial Data Management</option>
+    <option>Project Management</option>
+   </select>
+   <textarea id="msg" placeholder="Tell us about your project" required></textarea>
+   <button class="btn" type="submit">Send via WhatsApp</button>
+   <p class="note">This opens WhatsApp with your message ready to send. No account or server needed.</p>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p><b>SUMMIT INFRASTRUCTURE LTD</b> &middot; From Survey to Structure.</p>
+  <p>Kigali, Rwanda &middot; <span class="y"></span> All rights reserved.</p>
+ </div>
+</footer>
+
+<a class="wa" id="waBtn" href="#" aria-label="Chat on WhatsApp">WA</a>
+
+<script>
+/* EDIT THESE TWO LINES: WhatsApp number in international format, digits only (Rwanda = 250...) */
+var WHATSAPP = "250791380316";
+var YEAR = new Date().getFullYear();
+document.querySelector(".y").textContent = "© " + YEAR;
+document.getElementById("waBtn").href = "https://wa.me/" + WHATSAPP;
+document.getElementById("quoteForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var t = "Hello Summit Infrastructure Ltd,\n" +
+    "Name: " + document.getElementById("name").value + "\n" +
+    "Phone: " + document.getElementById("phone").value + "\n" +
+    "Service: " + document.getElementById("service").value + "\n" +
+    "Message: " + document.getElementById("msg").value;
+  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(t), "_blank");
+});
+document.querySelectorAll("nav a").forEach(function(a){
+  a.addEventListener("click", function(){ document.getElementById("menu-toggle").checked = false; });
+});
+</script>
+</body>
+</html>
