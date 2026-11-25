@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://magenta-gecko-4b2db3.netlify.app/sitemap.xml
